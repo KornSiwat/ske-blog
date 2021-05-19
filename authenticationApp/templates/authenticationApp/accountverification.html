@@ -1,0 +1,45 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+  Ske Blog - Account Verification
+{% endblock %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'authenticationApp/css/authenticationapp.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="authentication-container">
+    <h1>Account Verification</h1>
+    {% if profile.is_verified %}
+      <p>Your account is verified</p>
+      <div class="option-container">
+        <a id="logout-button"
+          class="option-button"
+          href="{% url "authenticationApp:logout" %}">
+          Log out
+        </a>
+      </div>
+    {% else %}
+    <p>We have sent a verification link to {{user.email}}</p>
+    <p>Please check your email</p>
+    <div class="option-container">
+      <a id="resend-email-button"
+        class="option-button"
+        href="{% url "authenticationApp:send-verification-email" %}"> 
+        Resend
+      </a>
+      <a id="home-button"
+        class="option-button"
+        href="{% url "authenticationApp:logout" %}">
+        Log out
+      </a>
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}
+
+{% block script%}
+{% endblock %}

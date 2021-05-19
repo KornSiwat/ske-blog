@@ -1,0 +1,19 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/authorcard.css' %}">
+
+<div class="author-card card">
+  <a href="{% url "blogApp:blog" username=author.user.username %}">
+    <div class="author-image-container">
+      <img class="author-image"
+        alt="Author Profile"
+        {% if author.profilepic %}
+          src="{{ author.profilepic.url }}"
+        {% endif %}
+      >
+    </div>
+    <div class="author-info-container">
+      <h3>{{author.user.username}}</h3>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,67 @@
+.content-section-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 64px;
+}
+
+.content-section-container > h2 {
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.content-container {
+  display: flex;
+  overflow: scroll hidden;
+  padding: 16px 0;
+}
+
+.content-scroll-button {
+  border: none;
+  background: none;
+  width: 36px;
+  height: 50px;
+}
+
+.content-scroll-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 50px;
+  height: 120px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.left-content-scroll-button-container {
+  align-self: flex-start;
+  top: 80px;
+  margin-bottom: -116px;
+  padding-left: 8px;
+}
+
+.right-content-scroll-button-container {
+  align-self: flex-end;
+  align-items: flex-end;
+  bottom: 152px;
+  margin-top: -116px;
+  padding-right: 8px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content-section-container {
+    margin: 0 32px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .content-scroll-button-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .content-section-container {
+    margin: 0 16px;
+  }
+}

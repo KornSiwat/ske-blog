@@ -1,0 +1,56 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+  Ske Blog - Login
+{% endblock %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'authenticationApp/css/login.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="authentication-container">
+    <h1>Log In</h1>
+    <p>Don't have an account? <a id='sign-up-link' href="{% url "authenticationApp:register" %}">Sign up</a></p>
+    <div class="login-form-container">
+      <div class="social-login-container">
+        <a href="{% url "social:begin" "google-oauth2" %}"> 
+          <div id="google-button" class="social-login-button">
+          Continue with Google
+          </div>
+        </a>
+        <a href="{% url "social:begin" "facebook" %}">
+          <div id="facebook-button" class="social-login-button">
+            Continue with Facebook
+          </div>
+        </a>
+      </div>
+      <div class="normal-login-container">
+        {% if messages %}
+          {% for msg in messages %}
+            <p class="message">{{msg}}</p>
+          {% endfor %}
+        {% endif %}
+        <form id='normal-login-form' method="POST">
+          <div class="input-container">
+            {% csrf_token %}
+            {{ form.username }}
+            {{ form.password }}
+            <div id="forget-password-link-container">
+              <a id="forget-password-link" href="{% url "authenticationApp:forget-password" %}">Forget password ?</a>
+            </div>
+          </div>
+          <button id="login-button" type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    document.getElementById("username-field").focus()
+  </script>
+{% endblock %}

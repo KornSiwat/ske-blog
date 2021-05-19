@@ -1,0 +1,72 @@
+.footer {
+    width: 100%;
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-Top: 50px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-family: 'Poppins', sans-serif !important;
+ }
+
+.logo-footer {
+    width: 100%;
+    text-align: center;
+}
+
+.blog-logo-footer {
+    width: 78px;
+    padding-bottom: 0.5rem;
+}
+
+.contact-us-footer {
+    width: 100%;
+    text-align: end;
+}
+
+
+.followus {
+    text-align: center;
+}
+
+.media-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-logo {
+    width: 60px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-logo-footer {
+        width: 60px;
+    }    
+
+    .footer-text {
+        font-size: 16px;
+        margin: 0px;
+    }
+
+    .contact-logo {
+        width: 36px;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .blog-logo-footer {
+        width: 42px;
+        padding-bottom: 0.5rem;
+    }    
+
+    .footer-text {
+        font-size: 12px !important;
+        margin: 0px;
+    }
+}
+
+

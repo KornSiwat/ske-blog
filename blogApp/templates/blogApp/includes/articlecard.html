@@ -1,0 +1,24 @@
+{% load static %}
+{% load thumbnail %}
+{% autoescape off %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/articlecard.css' %}">
+
+<div class="article-card card">
+  <a href="{% url "blogApp:detail" slug=article.slug %}">
+    <div class="article-image-container">
+      <img class="article-image"
+        alt="Article Thumbnail"
+        {% if article.thumbnail %}
+          src="{{ article.thumbnail.url }}"
+        {% endif %}
+      >
+    </div>
+    <div class="article-info-container">
+      <h3 class="article-name">{{article.title}}</h3>
+      <div class="article-sample-content">{{article.get_sample_content}}</div>
+      <p class="article-author">{{article.author}}</p>
+    </div>
+  </a>
+</div>
+{% endautoescape %}

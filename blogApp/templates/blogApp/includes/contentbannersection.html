@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/contentbannersection.css' %}">
+
+<div class="article-slider-container">
+    <div class="article-block">
+          {% for article in articles %}
+          <div class="image-container content-mySlides fade">
+            <a href="{% url "blogApp:detail" slug=article.slug %}"><img  class="image-inside" src="{{ article.thumbnail.url  }}" /></a>
+          </div>
+          {% endfor %}
+      </div>
+    <div class="article-block-side">
+          <div class="image-container-side" style="padding-bottom: 0.75rem">  
+              <a href="{% url "blogApp:detail" slug=first_articles.slug %}"><img class="image-inside-side" src="{{ first_articles.thumbnail.url  }}" /></a>
+          </div>
+          <div  class="image-container-side" style="padding-top: 0.75rem">
+            <a href="{% url "blogApp:detail" slug=last_articles.slug %}"><img  class="image-inside-side" src="{{ last_articles.thumbnail.url  }}" /></a>
+          </div>
+    </div>
+</div>
+<script src="{% static 'blogApp/js/contentbannersection.js' %}"></script>

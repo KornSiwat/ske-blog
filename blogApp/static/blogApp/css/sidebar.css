@@ -1,0 +1,75 @@
+.sidebar {
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 116px;
+    left: 36px;
+    overflow-x:hidden;
+    padding-top:20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 1s, opacity 0.2s linear;
+}
+
+.sidebar-content {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.sidebar-content-image {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-image {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.sidebar-author {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 18px;
+}
+
+.sidebar-author p {
+
+    margin-bottom: 0rem;
+    font-size: 12px !important;
+}
+
+.sidebar-author-name {
+    padding-bottom: 4px;
+}
+
+.sidebar-author-time {
+    color: var( --gray);
+}
+
+.share-link {
+    display:inline-flex;
+    list-style-type: none;
+    padding-left: 24px;
+}
+
+.link {
+    padding-right: 18px;
+}
+
+.sidebar-icon {
+    fill: var( --gray);
+}
+
+.sidebar-icon:hover {
+    fill: rgb(53, 53, 53);
+}
+
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        display: none;
+    }
+  
+  }

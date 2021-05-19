@@ -1,0 +1,75 @@
+.text-tee-sorathorn {
+    font-size: 60px;
+    margin: 0px;
+}
+
+.text-empower {
+    font-size: 30px; 
+    margin-bottom:2em;
+}
+
+.text-Welcome {
+    font-size: 24px !important;
+}
+
+.hero-banner {
+    justify-content: space-between;
+    padding-bottom: 24px;
+}
+.text-hero-banner {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.btn-hero-banner {
+    padding: 12px 48px;
+    font-size: 30px;
+    color: white;
+    background-color:rgb(0, 102, 255);
+    border-radius: 42px;
+    border: 0px;
+    cursor: pointer
+
+}
+
+.content-hero-banner {
+    text-align: center;
+}
+
+.blog-hero-banner {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+.img-hero-banner {
+    margin-top: 48px;
+    width: 60%;
+}
+
+@media screen and (max-width:450px) {
+    .text-tee-sorathorn {
+        font-size: 42px;
+    }
+
+    .text-empower {
+        font-size: 24px;
+    }
+
+    .text-Welcome {
+        font-size: 18px;
+    }
+
+    .btn-hero-banner {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .content-hero-banner {
+        margin-bottom: 12px;
+    }
+}

@@ -1,0 +1,19 @@
+{% extends "global/base.html" %} 
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/home.css' %}">
+
+<div class="home-container">
+    {% include 'blogApp/includes/getstartbannersection.html'%}
+
+    {% include 'blogApp/includes/tagsection.html' with tags=tags %}
+
+    {% if content_sections %}
+        {% for content_section in content_sections %}
+            {% include 'blogApp/includes/contentsection.html' with name=content_section.name contents=content_section.get_contents id=content_section.pk %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

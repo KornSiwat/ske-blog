@@ -1,0 +1,22 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/articlescollection.css' %}">
+
+<div class="article-container">
+  <h1>{{blog_name}}</h1>
+  {% if articles %}
+    <div class="card-container" onresize="configCardContainerLayout()">
+      {% for article in articles %}
+        {% include 'blogApp/includes/articlecard.html' with article=article %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p id="not-found">No Article</p>
+  {% endif %}
+</div>
+
+<script src="{% static 'blogApp/js/configCardContainerLayout.js' %}"></script>
+
+{% endblock %}

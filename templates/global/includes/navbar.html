@@ -1,0 +1,51 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'global/css/navbar.css' %}">
+
+<header class="navbar">
+  <nav class="main-nav">
+    <div class="main-nav__heading">
+      <a href="{% url "blogApp:home" %}">
+        <div class="main-nav__logo">
+            SKE16 Blog
+            </div>
+          </a>
+        <button id="toggle-nav">
+            menu
+        </button>
+    </div>
+
+    <ul class="main-nav__menu">
+      <li class="main-nav__menu-item">
+        <a class="main-nav__menu-item-link" href="{% url "blogApp:search" %}">Search</a>
+      </li>
+
+      {% if user.is_authenticated %}
+        <li class="main-nav__menu-item">
+          <a class="main-nav__menu-item-link" href="{% url "blogApp:create" %}">Create Article</a>
+        </li>
+
+        <li class="main-nav__menu-item main-nav__menu-item--dropdown">
+          <span class="main-nav__menu-item-link">Account</span>
+          <ul class="main-nav__sub-menu">
+              <li class="main-nav__sub-menu-item">
+                  <a class="main-nav__sub-menu-item-link" href="{% url "authenticationApp:profile" %}">My Profile</a>
+              </li>
+              <li class="main-nav__sub-menu-item">
+                  <a class="main-nav__sub-menu-item-link" href="{% url "blogApp:blog" username=user.username %}">My Blog</a>
+              </li>
+              <li class="main-nav__sub-menu-item">
+                  <a class="main-nav__sub-menu-item-link" href="{% url "authenticationApp:logout" %}">Logout</a>
+              </li>
+          </ul>
+        </li>
+      {% else %}
+        <li class="main-nav__menu-item">
+          <a class="main-nav__menu-item-link" href="{% url "authenticationApp:login" %}">Login</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+
+<script src="{% static 'global/js/navbar.js' %}"></script>

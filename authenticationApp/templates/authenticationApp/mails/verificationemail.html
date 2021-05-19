@@ -1,0 +1,10 @@
+{% autoescape off %} 
+Hi {{ user.username }},
+
+Please click on the link to verify your account,
+http://{{ domain }}{% url 'authenticationApp:verify-account' uidb64=uid token=token %}
+
+HappyBlogging!,
+
+Ske Blog Team
+{% endautoescape %}

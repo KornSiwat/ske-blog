@@ -1,0 +1,56 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+  Ske Blog - Profile
+{% endblock %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'authenticationApp/css/authenticationapp.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="authentication-container">
+    <h1>Profile</h1>
+    {% if messages %}
+      {% for msg in messages %}
+        <p class="message">{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+    <div class="profile-container">
+      <div class="profile-pic-container">
+        <img id='profile-pic'
+          alt="Profile Picture"
+          {% if profile.profilepic %}
+            src="{{ profile.profilepic.url }}"
+          {% else %}
+            src="{% static 'authenticationApp/img/defaultprofile.png'%}"
+          {% endif %}
+        >
+      </div>
+      <div class="profile-info-container">
+        <p><label>Username: </label> {{profile.user.username}}</p>
+        <p><label>Email: </label> {{profile.user.email}}</p>
+        <p><label>Firstname: </label> {{profile.firstname}}</p>
+        <p><label>Lastname: </label> {{profile.lastname}}</p>
+        <p><label>Phone: </label> {{profile.phone}}</p>
+      </div>
+    </div>
+    <div class="profile-button-container">
+      <a class="profile-button"
+        id="edit-profile-button"
+        href="{% url "authenticationApp:edit-profile" %}"
+      >Edit</a>
+      <a class="profile-button"
+        id="change-password-button"
+        href="{% url "authenticationApp:password-change" %}">Change Password</a>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    document.getElementById("username-field").focus()
+  </script>
+{% endblock %}

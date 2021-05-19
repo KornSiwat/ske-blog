@@ -1,0 +1,29 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/searchresult.css' %}">
+
+<div class="search-result-container">
+  <h1>Result</h1>
+  {% if results %}
+    <div class="card-container" onresize="configCardContainerLayout()">
+      {% if result_type == 'Article' %}
+        {% for article in results %}
+          {% include 'blogApp/includes/articlecard.html' with article=article %}
+        {% endfor %}
+      {% elif result_type == 'Author' %}
+        {% for author in results %}
+          {% include 'blogApp/includes/authorcard.html' with author=author %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% else %}
+    <p id="not-found">{{result_type}} Not Found</p>
+    <a id="back-to-search" href="{% url 'blogApp:search' %}">Back to Search</a>
+  {% endif %}
+</div>
+
+<script src="{% static 'blogApp/js/configCardContainerLayout.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+import sys
+
+from django import forms
+from blogApp.models import Comment
+
+
+class CommentForm(forms.ModelForm):
+    body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows':1, 'cols':30, 'placeholder' : 'leave comment here'}), label='')
+    class Meta:
+        model = Comment
+        fields = ('body',)
+
+sys.modules[__name__] = CommentForm

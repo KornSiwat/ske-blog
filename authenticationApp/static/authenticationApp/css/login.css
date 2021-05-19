@@ -1,0 +1,163 @@
+.authentication-container > h1 {
+  font-size: 32px;
+  margin: 8px;
+  color: var(--dark-gray);
+}
+
+/* login */
+.authentication-container {
+  text-align: center;
+  width: 80%;
+  margin: 10% auto;
+  padding: 24px 24px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.login-form-container {
+  display: flex;
+  direction: rtl;
+}
+
+.normal-login-container {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  padding: 16px;
+}
+
+#normal-login-form {
+  width: 100%;
+}
+
+.social-login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  padding: 16px;
+  border-left: 1px solid var(--light-gray);
+}
+
+.social-login-container > * {
+  margin: 8px 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.social-login-button {
+  width: 344px;
+  padding: 4px;
+
+  color: var(--background);
+  text-decoration: none;
+}
+
+#sign-up-link {
+  color: var(--blue);
+}
+
+#google-button {
+  background: #ea4335;
+}
+
+#facebook-button {
+  background: rgb(11, 138, 240);
+}
+
+.authentication-field {
+  width: 344px;
+  margin: 8px 0;
+  padding: 4px 8px;
+
+  text-align: center;
+  background: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+#forget-password-link-container {
+  align-self: center;
+}
+
+#forget-password-link {
+  font-size: 14px;
+  text-align: center;
+  color: var(--gray);
+}
+
+#login-button {
+  width: 140px;
+  margin: 4px 0 8px 0;
+  padding: 6px;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  background: var(--blue);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.message {
+  color: red;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  .authentication-container {
+    width: 85%;
+  }
+
+  .authentication-field,
+  .social-login-button {
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .authentication-container {
+    width: 85%;
+    margin: 15% auto;
+  }
+
+  .login-form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-login-container {
+    border: none;
+  }
+
+  .authentication-field {
+    width: 80%;
+  }
+
+  .normal-login-container,
+  .social-login-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .authentication-field {
+    width: 90%;
+  }
+
+  #login-button {
+    width: 180px;
+    font-size: 18px;
+  }
+}

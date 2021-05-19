@@ -1,0 +1,41 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+  Ske Blog - Edit Profile
+{% endblock %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'authenticationApp/css/authenticationapp.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="authentication-container">
+    <h1>Edit Profile</h1>
+    {% if messages %}
+      {% for msg in messages %}
+        <p class="message">{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+      <div class="input-container">
+        {% csrf_token %}
+        <div class="profile-upload">
+          {{form.profilepic}}
+        </div>
+        <p>{{form.user}}</p>
+        <p>{{form.firstname}}</p>
+        <p>{{form.lastname}}</p>
+        <p>{{form.phone}}</p>
+      </div>
+      <button id="submit-form-button" type="submit">Confirm</button>
+    </form>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    document.getElementById("username-field").focus()
+  </script>
+{% endblock %}

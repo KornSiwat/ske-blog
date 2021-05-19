@@ -1,0 +1,49 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/bannersection.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/bannerslideshow.css' %}">
+
+<div class="banner-container">
+  <div class="main-banner-container slideshow-container">
+      {% for banner in banners %}
+        <div class="mySlides">
+          <a
+            class="banner-link"
+            {% if banner.url %}  
+              href="{{ banner.url }}"
+            {% endif %}
+          >
+            <img class="main-banner"
+            {% if banner.image.url %}  
+            src="{{ banner.image.url }}"
+            {% endif %}
+            >
+          </a>
+        </div>
+      {% endfor %}
+      <div style="text-align: center">
+        {% for banner in banners %}
+          <span class="dot"></span>
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="sponsor-banner-container">
+    {% for banner in sponsor_banners %}
+      <a
+        class="banner-link sponsor-banner-link"
+        {% if banner.url %}  
+          href="{{ banner.url }}"
+        {% endif %}
+      >
+        <img class="sponsor-banner" 
+          {% if banner.image.url %}
+            src="{{ banner.image.url }}" 
+          {% endif%}
+        >
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{% static 'blogApp/js/bannersection.js' %}"></script>

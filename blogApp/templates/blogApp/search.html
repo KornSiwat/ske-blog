@@ -1,0 +1,21 @@
+{% extends "global/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/search.css' %}">
+
+<div class="search-container">
+  <form class="search-form-container" method="GET">
+    <h1>Search</h1>
+    <input class='keyword-box' type="text" name="keyword" placeholder="Looking for something?">
+    <div class="search-option-container">
+      <input type="radio" name="searchtype" value="Article" checked>
+      <label for="article">article</label>
+      <input type="radio" name="searchtype" value="Author">
+      <label for="author">author</label><br>  
+    </div>
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+{% endblock %}

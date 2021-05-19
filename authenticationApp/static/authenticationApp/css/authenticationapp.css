@@ -1,0 +1,322 @@
+.authentication-container > h1 {
+  font-size: 32px;
+  margin: 8px;
+  color: var(--dark-gray);
+}
+
+label {
+  color: var(--gray);
+  font-size: 22px;
+}
+
+input.placeholder {
+  text-align: center;
+}
+
+/* signup, forget password, account verification */
+.authentication-container {
+  text-align: center;
+  width: 80%;
+  margin: 10% auto;
+  padding: 24px 24px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-login-container {
+  margin: 16px 0;
+}
+
+.social-login-container {
+  margin: 0 auto;
+  width: 90%;
+  padding: 16px 0;
+
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.social-login-container > * {
+  margin: 8px 0;
+}
+
+.input-container {
+  margin-top: 24px;
+}
+
+.option-container {
+  margin: 0 auto;
+  width: 90%;
+  padding: 16px 0;
+
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.social-login-button {
+  width: 320px;
+  margin: 12px auto;
+  padding: 4px;
+
+  color: var(--background);
+  text-decoration: none;
+  box-shadow: 0 0 2px 2px var(--light-gray);
+  border-radius: 4px;
+}
+
+#google-button {
+  background: #ea4335;
+}
+
+#facebook-button {
+  background: rgb(11, 138, 240);
+}
+
+.authentication-field {
+  width: 80%;
+  margin: 0;
+  padding: 4px 4px;
+
+  text-align: center;
+  background: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+#submit-form-button {
+  width: 140px;
+  margin: 4px 0 8px 0;
+  padding: 6px;
+  color: white;
+  border: none;
+  border-radius: 32px;
+  background: var(--blue);
+  font-size: 20px;
+}
+
+.other-option-container > *,
+.other-option-container {
+  font-size: 14px;
+}
+
+.option-button {
+  margin: 4px 48px;
+}
+
+.message {
+  color: red;
+  font-size: 16px;
+}
+
+#profile-pic {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  align-items: flex-start;
+
+  border: 4px solid var(--light-gray);
+  box-shadow: 0 0 2px 2px var(--light-gray);
+  border-radius: 12%;
+}
+
+.profile-pic-container {
+  width: 50%;
+  margin: 16px 0;
+}
+
+.profile-info-container {
+  width: 50%;
+  text-align: left;
+  margin: 16px 0;
+}
+
+.profile-info-container > *,
+.authentication-container > label {
+  font-size: 22px;
+  margin: 8px 0;
+  color: var(--dark-gray);
+}
+
+.profile-button {
+  text-align: center;
+  display: block;
+  width: 40%;
+  margin: 16px auto;
+  padding: 4px;
+  font-size: 22px;
+
+  cursor: pointer;
+  color: var(--background);
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px var(--light-gray);
+  background: var(--gray);
+}
+
+#id_profilepic {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1400px) {
+  .authentication-container {
+    width: 80%;
+    padding: 16px 16px;
+  }
+
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .profile-info-container > *,
+  label {
+    font-size: 20px;
+  }
+
+  .profile-button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .authentication-container > h1 {
+    font-size: 24px;
+  }
+
+  .authentication-container > * {
+    font-size: 18px;
+  }
+
+  .authentication-container {
+    width: 75%;
+    margin: 15% auto;
+  }
+
+  .social-login-button {
+    width: 252px;
+  }
+
+  .authentication-field {
+    width: 80%;
+  }
+
+  .option-button {
+    margin: 4px 16px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #profile-pic {
+    width: 192px;
+    height: 192px;
+    margin: 8px 0;
+  }
+
+  .profile-pic-container {
+    width: auto ;
+    margin: 0;
+  }
+
+  .profile-info-container {
+    width: auto;
+    text-align: left;
+    margin: 0;
+  }
+
+  .profile-button {
+    width: 60%;
+    margin: 16px auto;
+  }
+
+  #id_profilepic {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .authentication-container > h1 {
+    font-size: 24px;
+  }
+
+  .authentication-container > * {
+    font-size: 16px;
+  }
+
+  .authentication-container {
+    width: 80%;
+    margin: 20% auto;
+    padding: 8px 24px;
+  }
+
+  .social-login-button {
+    width: 200px;
+  }
+
+  .authentication-field {
+    width: 90%;
+  }
+
+  #submit-form-button {
+    width: 180px;
+    font-size: 16px;
+  }
+
+  .option-button {
+    margin: 4px 16px;
+  }
+
+  #profile-pic {
+    width: 152px;
+    height: 152px;
+  }
+
+  .profile-info-container {
+    margin-bottom: 0;
+  }
+
+  .profile-info-container > *,
+  label {
+    font-size: 18px;
+  }
+
+  .profile-button {
+    width: 85%;
+    font-size: 18px;
+  }
+
+  #edit-profile-button {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .authentication-container {
+    width: 80%;
+  }
+
+  .profile-info-container > *,
+  label {
+    font-size: 16px;
+  }
+
+  .profile-button {
+    font-size: 16px;
+  }
+}

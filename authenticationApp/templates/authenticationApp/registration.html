@@ -1,0 +1,37 @@
+{% extends 'global/base.html' %}
+
+{% block title %}
+  Ske Blog - Registration
+{% endblock %}
+
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'authenticationApp/css/authenticationapp.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="authentication-container">
+    <h1>Sign Up</h1>
+    <div class="registration-container">
+      {% if messages %}
+        {% for msg in messages %}
+          <p class="message">{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+      <form method="POST">
+        <div class="input-container">
+          {% csrf_token %}
+          {{ form.as_p }}
+        </div>
+        <button id="submit-form-button" type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script%}
+  <script>
+    document.getElementById("username-field").focus()
+  </script>
+{% endblock %}

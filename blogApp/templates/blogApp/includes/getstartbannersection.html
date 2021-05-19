@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/getstartbannersection.css' %}">
+
+<div class="hero-banner banner-container">
+    <div class="text-hero-banner">
+    <div class="content-hero-banner">
+        <h1 class="text-tee-sorathorn" >SKE Blog</h1>
+        <h3 class="text-empower">Software Security Final Project</h3>
+        <div style="width: 100%">
+        {% if user.is_authenticated %}
+            <h3 class="text-Welcome" > Welcome Back {{ user.username }} ! </h3>
+        {% else %}
+            <a class="btn-hero-banner" href="{% url 'authenticationApp:login' %}?next={{request.path}}">Get Started</a>
+        {% endif %}
+        </div>
+    </div>
+    </div>
+    <div class="blog-hero-banner">
+        <img class="img-hero-banner" src="{% static "blogApp/img/ske16.jpg" %}">
+    </div>
+</div>

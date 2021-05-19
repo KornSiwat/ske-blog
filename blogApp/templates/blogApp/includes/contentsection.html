@@ -1,0 +1,28 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'blogApp/css/contentsection.css' %}">
+
+<div class="content-section-container">
+  <h2>{{name}}</h2>
+  <div 
+    id="left-scroll-button-{{id}}"
+    class="content-scroll-button-container  left-content-scroll-button-container"
+    onclick="onLeftScrollButtonClicked(this)"
+  >
+    <img class="content-scroll-button" src="{% static 'blogApp/img/back.png' %}">
+  </div>
+  <div id="content-section-{{id}}" class="content-container">
+    {% for content in contents %}
+      {% include 'blogApp/includes/articlecard.html' with article=content %}
+    {% endfor %}
+  </div>
+  <div 
+    id="right-scroll-button-{{id}}"
+    class="content-scroll-button-container right-content-scroll-button-container"
+    onclick="onRightScrollButtonClicked(this)"
+  >
+    <img class="content-scroll-button" src="{% static 'blogApp/img/next.png' %}">
+  </div>
+</div>
+
+<script src="{% static 'blogApp/js/contentsection.js' %}"></script>
